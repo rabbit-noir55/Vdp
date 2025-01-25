@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #141e30, #243b55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .player-container {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <video id="player" playsinline controls>
+            <source src="https://topfilm.info/3/tarjima_kinolar/Sonik_720.mp4" type="video/mp4">
+            Brauzeringiz video pleerni qo'llab-quvvatlamaydi.
+        </video>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        // Plyr.js bilan pleerni ishga tushirish
+        const player = new Plyr('#player', {
+            controls: [
+                'play-large', // Markazdagi katta o‘ynatish tugmasi
+                'play',       // O‘ynatish/Pauza tugmasi
+                'progress',   // Vaqt chizig‘i
+                'current-time', // Joriy vaqt ko‘rsatkichi
+                'duration',   // Video davomiyligi
+                'mute',       // Ovozni o‘chirish tugmasi
+                'volume',     // Ovoz darajasini boshqarish
+                'settings',   // Sozlamalar (tezlik va boshqalar)
+                'fullscreen'  // To‘liq ekran rejimi
+            ],
+            settings: ['speed', 'quality'], // Tezlik va sifat sozlamalari
+        });
+    </script>
+</body>
+</html>
